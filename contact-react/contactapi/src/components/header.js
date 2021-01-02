@@ -64,6 +64,7 @@ function Header() {
 						value={data.search}
 						onChange={(newValue) => setData({ search: newValue })}
 						onRequestSearch={() => goSearch(data.search)}
+						className={classes.link}
 					/>
 					<Button
 						href="#"
@@ -103,7 +104,7 @@ function Header() {
 						component={NavLink}
 						to="/admin"
 					>
-						Admin
+						Profile
 					</Button>
 				</Toolbar>
 			</AppBar>

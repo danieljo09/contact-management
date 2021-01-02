@@ -40,7 +40,7 @@ export default function Create() {
 		email: '',
         address: '',
         facebook: '',
-        desc: '', 
+		desc: '', 
 	});
 
 	const [contactData, updateFormData] = useState(initialFormData);
@@ -76,7 +76,7 @@ export default function Create() {
 		formData.append('address', contactData.address);
         formData.append('facebook', contactData.facebook);
         formData.append('desc', contactData.desc);
-        formData.append('author', 1);
+		formData.append('author', 1);
 		formData.append('image', contactimage.image[0]);
 		axiosInstance.post(`admin/create/`, formData);
 		history.push({
@@ -84,6 +84,8 @@ export default function Create() {
 		});
 		window.location.reload();
 	};
+
+	
 
 	const classes = useStyles();
 
@@ -169,6 +171,7 @@ export default function Create() {
 						</Grid>
 						<input
 							accept="image/*"
+							className={classes.input}
 							id="contact-image"
 							onChange={handleChange}
 							name="image"

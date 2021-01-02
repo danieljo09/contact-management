@@ -36,7 +36,6 @@ export default function Create() {
         address: '',
         facebook: '',
 		desc: '',
-		image: null,
 	});
 
 	const [formData, updateFormData] = useState(initialFormData);
@@ -51,7 +50,6 @@ export default function Create() {
                 ['address']: res.data.address,
                 ['facebook']: res.data.facebook,
 				['desc']: res.data.desc,
-				// ['image']: res.data.image,
 			});
 			console.log(res.data);
 		});
@@ -76,7 +74,6 @@ export default function Create() {
             address: formData.address,
             facebook: formData.facebook,
 			desc: formData.desc,
-			// image: formData.image,
 		});
 		history.push({
 			pathname: '/admin/',
@@ -171,14 +168,6 @@ export default function Create() {
 								rows={3}
 							/>
 						</Grid>
-						<input
-							accept="image/*"
-							id="image"
-							onChange={handleChange}
-							value={formData.image}
-							name="image"
-							type="file"
-						/>
 					</Grid>
 					<Button
 						type="submit"

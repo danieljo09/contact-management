@@ -5,8 +5,9 @@ function Loading(Component) {
     if (!isLoading) return <Component {...props} />;
     return (
       <p style={{ fontSize: "25px" }}>
-        We are waiting for the data to load!...
+        Please log in to see contacts.
       </p>
+      
     );
   };
 }

@@ -10,13 +10,13 @@ from rest_framework.parsers import MultiPartParser, FormParser
 # Display Contacts
 
 class ContactList(generics.ListAPIView):
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
     serializer_class = ContactSerializer
     queryset = Contact.objects.all()
 
 
 class ContactDetail(generics.RetrieveAPIView):
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
     serializer_class = ContactSerializer
 
     def get_object(self, queryset=None, **kwargs):
@@ -26,7 +26,7 @@ class ContactDetail(generics.RetrieveAPIView):
 # Contact Search
 
 class ContactListDetailfilter(generics.ListAPIView):
-
+    permission_classes = [permissions.IsAuthenticated]
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
     filter_backends = [filters.SearchFilter]
@@ -35,7 +35,7 @@ class ContactListDetailfilter(generics.ListAPIView):
 # Contact Admin
 
 class CreateContact(APIView):
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
     parser_classes = [MultiPartParser, FormParser]
 
     def post(self, request, format=None):
@@ -49,18 +49,18 @@ class CreateContact(APIView):
 
 
 class AdminContactDetail(generics.RetrieveAPIView):
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
 
 
 class EditContact(generics.UpdateAPIView):
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
     serializer_class = ContactSerializer
     queryset = Contact.objects.all()
 
 
 class DeleteContact(generics.RetrieveDestroyAPIView):
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
     serializer_class = ContactSerializer
     queryset = Contact.objects.all()
