@@ -136,8 +136,8 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
-<<<<<<< HEAD
 
 settings.py
-=======
->>>>>>> 44528188b38682e814873473fd6b2a08c939d4e1
+migrations/
+media/
+node_modules/

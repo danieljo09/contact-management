@@ -12,7 +12,10 @@ from rest_framework.parsers import MultiPartParser, FormParser
 class ContactList(generics.ListAPIView):
     permission_classes = [permissions.IsAuthenticated]
     serializer_class = ContactSerializer
-    queryset = Contact.objects.all()
+
+    def get_queryset(self):
+        user = self.request.user
+        return Contact.objects.filter(author=user)
 
 
 class ContactDetail(generics.RetrieveAPIView):
@@ -20,17 +23,22 @@ class ContactDetail(generics.RetrieveAPIView):
     serializer_class = ContactSerializer
 
     def get_object(self, queryset=None, **kwargs):
-        item = self.kwargs.get('pk')
-        return get_object_or_404(Contact, tel=item)
+        user = self.request.user
+        if Contact.objects.filter(author=user):
+            item = self.kwargs.get('pk')
+            return get_object_or_404(Contact, tel=item)
 
 # Contact Search
 
 class ContactListDetailfilter(generics.ListAPIView):
     permission_classes = [permissions.IsAuthenticated]
-    queryset = Contact.objects.all()
     serializer_class = ContactSerializer
     filter_backends = [filters.SearchFilter]
-    search_fields = ['name']
+    search_fields = ['name', 'tel']
+
+    def get_queryset(self):
+        user = self.request.user
+        return Contact.objects.filter(author=user)
 
 # Contact Admin
 
@@ -50,17 +58,26 @@ class CreateContact(APIView):
 
 class AdminContactDetail(generics.RetrieveAPIView):
     permission_classes = [permissions.IsAuthenticated]
-    queryset = Contact.objects.all()
     serializer_class = ContactSerializer
+
+    def get_queryset(self):
+        user = self.request.user
+        return Contact.objects.filter(author=user)
 
 
 class EditContact(generics.UpdateAPIView):
     permission_classes = [permissions.IsAuthenticated]
     serializer_class = ContactSerializer
-    queryset = Contact.objects.all()
+
+    def get_queryset(self):
+        user = self.request.user
+        return Contact.objects.filter(author=user)
 
 
 class DeleteContact(generics.RetrieveDestroyAPIView):
     permission_classes = [permissions.IsAuthenticated]
     serializer_class = ContactSerializer
-    queryset = Contact.objects.all()
+
+    def get_queryset(self):
+        user = self.request.user
+        return Contact.objects.filter(author=user)
