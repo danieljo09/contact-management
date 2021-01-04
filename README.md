@@ -1,4 +1,4 @@
-<h3 align="center">Contact Management</h3>
+<h2 align="center">Contact Management</h2>
 
 
 <!-- TABLE OF CONTENTS -->
@@ -54,7 +54,7 @@ This is an example of how to list things you need to use the software and how to
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/danieljo09/contact-management.git
    ```
 2. Install NPM packages
    ```sh
@@ -66,6 +66,23 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Single contact view
+<img src="images/Contact.png" alt="Contact">
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+Create contact view
+<img src="images/Create.png" alt="Create">
+
+Edit contact view
+<img src="images/Edit.png" alt="Edit">
+
+Delete contact view
+<img src="images/Delete.png" alt="Delete">
+
+Another view of all contacts (Table)
+<img src="images/Profile.png" alt="Profile">
+
+Registration View
+<img src="images/Register.png" alt="Register">
+
+Login View
+<img src="images/Login.png" alt="Login">
