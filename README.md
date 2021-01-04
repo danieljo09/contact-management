@@ -29,6 +29,7 @@
 
 <img src="images/Contacts.png" alt="Contacts">
 
+<p>A contact management system (created as a minimum viable product), so that users can create, edit, and delete their contacts and their details.</p>
 
 ### Built With
 
