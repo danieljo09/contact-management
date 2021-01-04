@@ -141,3 +141,4 @@ settings.py
 migrations/
 media/
 node_modules/
+.DS_Store
