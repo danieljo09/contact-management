@@ -46,7 +46,16 @@ const Contacts = (props) => {
   const { contacts } = props;
   const classes = useStyles();
   if (!contacts || contacts.length === 0)
-    return <p>You do not have any contacts.</p>;
+    return (
+      <Container>
+        <p>You do not have any contacts.</p>
+        <Link href="/admin/create">
+          <Fab className={classes.fab} color="primary" aria-label="add">
+            <AddIcon />
+          </Fab>
+        </Link>
+      </Container>
+    );
   return (
     <React.Fragment>
       <Container maxWidth="md" component="main">

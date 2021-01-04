@@ -34,7 +34,6 @@ export default function Create() {
 
 	const history = useHistory();
 	const initialFormData = Object.freeze({
-		id: '',
 		name: '',
 		tel: '',
 		email: '',
@@ -44,7 +43,7 @@ export default function Create() {
 	});
 
 	const [contactData, updateFormData] = useState(initialFormData);
-	const [contactimage, setContactImage] = useState(null);
+	const [contactImage, setContactImage] = useState(null);
 
 	const handleChange = (e) => {
 		if ([e.target.name] == 'image') {
@@ -76,8 +75,8 @@ export default function Create() {
 		formData.append('address', contactData.address);
         formData.append('facebook', contactData.facebook);
         formData.append('desc', contactData.desc);
-		formData.append('author', 1);
-		formData.append('image', contactimage.image[0]);
+		formData.append('author', contactData.author);
+		formData.append('image', contactImage.image[0]);
 		axiosInstance.post(`admin/create/`, formData);
 		history.push({
 			pathname: '/admin/',
