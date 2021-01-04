@@ -27,7 +27,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Contacts][images/Contacts.png]][https://github.com/danieljo09/contact-management]
+<img src="images/Contacts.png" alt="Contacts">
 
 
 ### Built With
